@@ -2,10 +2,10 @@
   "name": "nextjs-fullstack-app-template",
   "version": "0.1.0",
   "private": true,
-  "engins": {
+  "engines": {
     "node": ">=16.17.0",
-    "npm": ">=8.19.0",
-    "yarn": "please-use-npm"
+    "yarn": ">=1.22.19",
+    "npm": "please-use-yarn"
   },
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -13,7 +13,9 @@
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "next": "13.0.2",
@@ -21,16 +23,30 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.6",
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
     "@types/node": "18.11.9",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
+    "babel-loader": "^8.3.0",
     "cross-env": "^7.0.3",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.2",
+    "eslint-plugin-storybook": "^0.6.7",
     "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "typescript": "4.8.4"
+  },
+  "resolutions": {
+    "webpack": "^5"
   }
 }
