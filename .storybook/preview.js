@@ -1,4 +1,6 @@
 // @ts-check
+import * as NextImage from 'next/image';
+import React from 'react'; // Somehow I need to import react to prevent warnings. Don't know why since the react DOCS say it's not necessary.
 import '../pages/globals.css';
 
 const BREAKPOINTS_INT = {
@@ -26,20 +28,20 @@ const customViewports = Object.fromEntries(
 );
 
 // Allow Storybook to handle Next's <Image> component
-// const OriginalNextImage = NextImage.default;
+const OriginalNextImage = NextImage.default;
 
-// Object.defineProperty(NextImage, 'default', {
-//   configurable: true,
-//   value: (props) => <OriginalNextImage {...props} unoptimized />,
-// });
+Object.defineProperty(NextImage, 'default', {
+  configurable: true,
+  value: (props) => <OriginalNextImage {...props} unoptimized />,
+});
 
-// export const parameters = {
-//   actions: { argTypesRegex: '^on[A-Z].*' },
-//   controls: {
-//     matchers: {
-//       color: /(background|color)$/i,
-//       date: /Date$/,
-//     },
-//   },
-//   viewport: { viewports: customViewports },
-// };
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  viewport: { viewports: customViewports },
+};
