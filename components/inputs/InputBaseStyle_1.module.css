@@ -1,0 +1,49 @@
+.form {
+  margin: auto;
+  width: 100%;
+  padding: 20px 20px;
+  font-weight: 400;
+}
+.form .fieldSet {
+  width: 80%;
+  margin: 50px auto;
+}
+.form .fieldSet .legend {
+  font-size: 14px;
+  font-weight: 500;
+}
+.form .fieldSet .inputContainer {
+  margin-top: 20px;
+}
+.form .fieldSet .inputContainer .inputTitle {
+  margin-bottom: 0px;
+  line-height: 22px;
+  font-size: 12px;
+  font-weight: 400;
+  vertical-align: middle;
+  min-width: 180px;
+}
+.form .fieldSet .inputContainer .inputLabel {
+  min-width: 160px;
+  font-size: 12px;
+}
+.form .fieldSet .inputContainer.inputCheckboxContainer,
+.form .fieldSet .inputContainer.inputRadioContainer {
+  display: grid;
+  grid-template-columns: 180px auto;
+}
+.form .fieldSet .inputContainer.inputTextContainer,
+.form .fieldSet .inputContainer.inputSelectContainer,
+.form .fieldSet .inputContainer.inputTextareaContainer {
+  display: flex;
+}
+.form .fieldSet .inputContainer.inputCheckboxContainer input {
+  vertical-align: middle;
+}
+.form .fieldSet .inputContainer.inputCheckboxContainer span {
+  display: inline-block;
+  line-height: 22px;
+  text-indent: 10px;
+  vertical-align: middle;
+  margin-left: 5px;
+} /*# sourceMappingURL=input_template.module.css.map */

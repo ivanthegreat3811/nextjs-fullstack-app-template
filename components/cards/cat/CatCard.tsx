@@ -9,18 +9,12 @@ export interface ICatCard {
   time: string;
 }
 
-const CatCard: React.FC<ICatCard> = ({ tag, title, body, author, time }) => {
+export default function CatCard({ tag, title, body, author, time }: ICatCard) {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.card__header}>
-          <Image
-            src="/time-cat.jpg"
-            alt="card__image"
-            className={styles.card__image}
-            width="600"
-            height="400"
-          />
+          <Image src="/time-cat.jpg" alt="card__image" className={styles.card__image} width="600" height="400" />
         </div>
         <div className={styles.card__body}>
           <span className={`${styles.tag} ${styles['tag-blue']}`}>{tag}</span>
@@ -29,13 +23,7 @@ const CatCard: React.FC<ICatCard> = ({ tag, title, body, author, time }) => {
         </div>
         <div className={styles.card__footer}>
           <div className={styles.user}>
-            <Image
-              src="https://i.pravatar.cc/40?img=3"
-              alt="user__image"
-              className={styles.user__image}
-              width="40"
-              height="40"
-            />
+            <Image src="https://i.pravatar.cc/40?img=3" alt="user__image" className={styles.user__image} width="40" height="40" />
             <div className={styles.user__info}>
               <h5>{author}</h5>
               <small>{time}</small>
@@ -45,6 +33,4 @@ const CatCard: React.FC<ICatCard> = ({ tag, title, body, author, time }) => {
       </div>
     </div>
   );
-};
-
-export default CatCard;
+}
